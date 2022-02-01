@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 16:15:02 by dexposit          #+#    #+#             */
-/*   Updated: 2022/01/25 19:04:56 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/02/01 16:37:12 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,23 +19,21 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	char		*lasts;
 	char		*lastd;
 
+	if (!dest && !src)
+		return (0);
 	d = dest;
 	s = src;
 	if (s > d)
 	{
 		while (len--)
-		{
 			*d++ = *s++;
-		}
 	}
 	else
 	{
 		lasts = (char *)s + (len - 1);
 		lastd = d + (len - 1);
 		while (len--)
-		{
 			*lastd-- = *lasts--;
-		}
 	}
 	return (dest);
 }

@@ -6,7 +6,7 @@
 #    By: dexposit <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/24 13:35:22 by dexposit          #+#    #+#              #
-#    Updated: 2022/01/31 18:46:24 by dexposit         ###   ########.fr        #
+#    Updated: 2022/02/01 18:02:31 by dexposit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,8 @@ SRCS			=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 
 OBJS			= $(SRCS:.c=.o)
 
-BONUS			=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
-					ft_lstadd_back.c
+BONUS			=	ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c \
+					ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c
 
 BONUS_OBJS		= $(BONUS:.c=.o)
 

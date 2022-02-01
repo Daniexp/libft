@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 16:11:22 by dexposit          #+#    #+#             */
-/*   Updated: 2022/01/26 17:26:14 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/02/01 16:09:23 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ static int	space(const char c)
 
 int	ft_atoi(const char *nptr)
 {
-	int	sign;
-	int	res;
+	int				sign;
+	unsigned int	res;
 
 	while (space(*nptr))
 		nptr++;
@@ -38,6 +38,10 @@ int	ft_atoi(const char *nptr)
 		res *= 10;
 		res += *nptr - '0';
 		nptr++;
+		if (res > 2147483657 && sign == 1)
+			return (-1);
+		if (res > 2147483648 && sign == -1)
+			return (0);
 	}
 	return (sign * res);
 }

@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 12:49:07 by dexposit          #+#    #+#             */
-/*   Updated: 2022/01/31 12:56:24 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/02/01 10:59:30 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-	{
-		write(fd, &s[i], sizeof(char));
-		i++;
-	}
+	if (!s || fd < 0)
+		return ;
+	write(fd, s, ft_strlen(s));
 }

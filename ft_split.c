@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 12:43:48 by dexposit          #+#    #+#             */
-/*   Updated: 2022/01/28 17:30:06 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/02/01 16:27:25 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,13 @@ static void	save_word(char	**dst, char	**str, char c)
 	 *	6-Devolver el string de palabras
 	 *	*/
 
+static void	free_memory(char **res, size_t i)
+{
+	while (i-- >= 0)
+		free(res[i]);
+	free(res);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	*str;
@@ -72,6 +79,8 @@ char	**ft_split(char const *s, char c)
 	char	**res;
 	size_t	i;
 
+	if (!s)
+		return (0);
 	nw = count_words(s, c);
 	str = (char *)s;
 	res = malloc(sizeof(char *) * (nw + 1));
@@ -82,11 +91,7 @@ char	**ft_split(char const *s, char c)
 	{
 		save_word(&(res[i]), &str, c);
 		if (res[i] == 0)
-		{
-			while (i-- >= 0)
-				free(res[i]);
-			free(res);
-		}
+			free_memory(res, i);
 		i++;
 	}
 	res[i] = 0;

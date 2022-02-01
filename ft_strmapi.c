@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 18:04:03 by dexposit          #+#    #+#             */
-/*   Updated: 2022/01/31 12:23:49 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/02/01 16:33:21 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*str;
 	unsigned int	i;
 
+	if (!s)
+		return (0);
 	str = ft_strdup(s);
 	if (!str)
 		return (0);
