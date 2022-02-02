@@ -6,20 +6,11 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 17:33:50 by dexposit          #+#    #+#             */
-/*   Updated: 2022/01/31 12:01:18 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/02/02 12:17:50 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/*
- *	Recibe int, construye un string con ese int
- *	ej:	ft_itoa(1000)	->	[1, 0, 0, 0]
- *	1-	Contar número de digitos del número
- *	2-	Reservar memoria para digitos + null
- *	3-	Rellenar el string	(desde el final con %10)
- *	si el numero es negativo hay 
-*/
 
 static size_t	count_digits(int n)
 {
@@ -101,18 +92,3 @@ char	*ft_itoa(int n)
 	rvs_string(str);
 	return (str);
 }
-/*
-#include <limits.h>
-int main(void)
-{
-	char *ptr = ft_itoa(-1234);
-	char *aux = ptr;	
-	while (*aux)
-	{
-		printf("%c", *aux);
-		aux++;
-	}
-	free(ptr);
-	return (0);
-}
-*/

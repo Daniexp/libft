@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 19:17:29 by dexposit          #+#    #+#             */
-/*   Updated: 2022/02/01 19:17:32 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/02/02 12:14:09 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_list	*ft_lstlast(t_list *lst)
 {
 	if (!lst)
-		return 0;
+		return (0);
 	while (lst->next)
 		lst = lst->next;
 	return (lst);

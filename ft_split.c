@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 12:43:48 by dexposit          #+#    #+#             */
-/*   Updated: 2022/02/01 16:27:25 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/02/02 12:22:43 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,6 @@ static size_t	count_words(char const *s, char c)
 	}
 	return (count);
 }
-	/*
-	 * 	x	->	inicio de nuestro string con palabras y delimitadores
-	 *	**ptr	->	puntero2 que apunta a un puntero1 y este a su vez a x
-	 *		*ptr	->	donde apunta puntero2 (puntero1) modificarias a donde ptr doble va 
-	 *		**ptr	->	donde apunta puntero1 (x) modificas a donde apunta el ptr simple
-	 * */
-	/*
-	 *	Mover str hasta inicio de una palabra
-	 *	Apuntar la cadena aux al fin de esta palabra con strchr
-	 *	Usar substr con la diferencia de str y aux
-	*/
 
 static void	save_word(char	**dst, char	**str, char c)
 {
@@ -57,13 +46,6 @@ static void	save_word(char	**dst, char	**str, char c)
 	while ((aux - *str) != 0)
 		*str = *str + 1;
 }
-	/*	1-Contar palabras
-	 *	2-Copia del string no constante para trabajar con el
-	 *	3-Reservar memoria para el doble ptr donde guardar palabras
-	 *	4-LLamar a la función de meter palabras hasta que esten todas
-	 *	5-Control de fallos en reserva de memoria
-	 *	6-Devolver el string de palabras
-	 *	*/
 
 static void	free_memory(char **res, size_t i)
 {
@@ -97,27 +79,3 @@ char	**ft_split(char const *s, char c)
 	res[i] = 0;
 	return (res);
 }
-/*
-int main(void)
-{
-	char *ptr = "aaa  aaa     ";
-	printf("%zu\n", count_words(ptr, ' '));
-	
-	ptr = " hola l mundo";
-	printf("%zu\n", count_words(ptr, ' '));
-	char **str = ft_split(ptr, ' ');
-	int i = 0;
-	while (str[i])
-	{
-		printf("%s\n",str[i]);
-		i++;
-	}
-	i = 0;
-			while (str[i])
-			{
-				free(str[i]);
-				i++;
-			}
-			free(str);
-	return (0);
-}*/

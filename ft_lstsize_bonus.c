@@ -6,15 +6,16 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 19:17:15 by dexposit          #+#    #+#             */
-/*   Updated: 2022/02/01 19:17:18 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/02/02 12:15:56 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	int	i;
+
 	i = 0;
 	while (lst != 0)
 	{
