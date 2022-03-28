@@ -1,0 +1,3 @@
+[submodule "gnl"]
+	path = gnl
+	url = git@github.com:Daniexp/Get-Next-Line.git
