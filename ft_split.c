@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 12:43:48 by dexposit          #+#    #+#             */
-/*   Updated: 2022/02/02 12:22:43 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/29 00:59:19 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static void	save_word(char	**dst, char	**str, char c)
 
 static void	free_memory(char **res, size_t i)
 {
-	while (i-- >= 0)
+	while ((int) i-- >= 0)
 		free(res[i]);
 	free(res);
 }
