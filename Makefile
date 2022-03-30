@@ -6,7 +6,7 @@
 #    By: dexposit <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/24 13:35:22 by dexposit          #+#    #+#              #
-#    Updated: 2022/03/29 01:10:08 by dexposit         ###   ########.fr        #
+#    Updated: 2022/03/30 23:37:41 by dexposit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ BONUS			=	ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlas
 					ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c \
 					ft_lstmap_bonus.c
 
-GNL				=	./gnl/get_next_line.c ./gnl/get_next_line_utils.c
+GNL				=	./gnl/get_next_line.c
 .SILENT:
 OBJS			= $(SRCS:.c=.o)
 BONUS_OBJS		= $(BONUS:.c=.o)
