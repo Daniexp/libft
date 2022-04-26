@@ -6,7 +6,7 @@
 #    By: dexposit <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/24 13:35:22 by dexposit          #+#    #+#              #
-#    Updated: 2022/04/26 21:30:08 by dexposit         ###   ########.fr        #
+#    Updated: 2022/04/26 22:37:06 by dexposit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ BONUS			=	ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlas
 					ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c \
 					ft_lstmap_bonus.c
 
-GNL				=	./gnl/get_next_line.c
+GNL				=	gnl/get_next_line.c
 .SILENT:
 OBJS			= $(SRCS:.c=.o)
 BONUS_OBJS		= $(BONUS:.c=.o)
@@ -32,8 +32,7 @@ GNL_OBJS		= $(GNL:.c=.o)
 BONUSS			= . 
 CC				= gcc
 RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror -Iinc -Ignl/ -I.
-LDFLAGS			= _L gnl/ -lft
+CFLAGS			= -Wall -Werror -Wextra -Ignl/ -I.
 NAME			= libft.a
 
 all:			$(NAME)
