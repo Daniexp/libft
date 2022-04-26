@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 15:44:24 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/29 02:26:53 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/04/26 21:26:25 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
-# include "./gnl/get_next_line.h"
+# include <get_next_line.h>
 
 typedef struct s_list
 {

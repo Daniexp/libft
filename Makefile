@@ -6,7 +6,7 @@
 #    By: dexposit <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/24 13:35:22 by dexposit          #+#    #+#              #
-#    Updated: 2022/03/30 23:37:41 by dexposit         ###   ########.fr        #
+#    Updated: 2022/04/26 21:30:08 by dexposit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,8 +32,8 @@ GNL_OBJS		= $(GNL:.c=.o)
 BONUSS			= . 
 CC				= gcc
 RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror -I.
-
+CFLAGS			= -Wall -Wextra -Werror -Iinc -Ignl/ -I.
+LDFLAGS			= _L gnl/ -lft
 NAME			= libft.a
 
 all:			$(NAME)
