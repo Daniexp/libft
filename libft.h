@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 15:44:24 by dexposit          #+#    #+#             */
-/*   Updated: 2022/04/26 21:26:25 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/09/16 15:31:50 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,21 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+typedef struct s_bst
+{
+	void			*content;
+	struct s_bst	*left;
+	struct s_bst	*right;
+}	t_bst;
+
+/*	ISX		*/
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
+/*	MEM		*/
+/*	STR		*/
+/*	TOX		*/
 int		ft_isprint(int c);
 size_t	ft_strlen(const char *s);
 void	*ft_memset(void *s, int c, size_t n);
@@ -53,10 +64,12 @@ char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+/*	PUT		*/
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+/*	LST 	*/
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
@@ -66,5 +79,9 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-
+/*	BST		*/
+t_bst	*ft_bstnew(void *content);
+void	ft_bstadd(t_bst **bst, t_bst *new,int (*f)(void *)(void *);
+t_bst	*ft_bstsearch(t_bst **bst, void *cnt);
+void	ft_bstiter(t_bst *bst, void (*f)(void *));
 #endif
