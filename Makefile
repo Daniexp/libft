@@ -6,7 +6,7 @@
 #    By: dexposit <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/24 13:35:22 by dexposit          #+#    #+#              #
-#    Updated: 2022/09/16 19:17:35 by dexposit         ###   ########.fr        #
+#    Updated: 2022/09/17 16:25:26 by dexposit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,10 +44,10 @@ MEM				=	ft_calloc.c					\
 					ft_substr.c
 TO				=	ft_tolower.c				\
 					ft_toupper.c
-BST				=	ft_bstnew.c					\	
+BST				=	ft_bstnew.c					\
 					ft_bstadd.c					\
 					ft_bstiter.c				\
-					ft_bstsearch.c				
+					ft_bstsearch.c
 BONUS			=	ft_lstnew_bonus.c			\
 					ft_lstadd_front_bonus.c 	\
 					ft_lstsize_bonus.c			\
@@ -73,16 +73,16 @@ PUTOBJ			= $(DPUT:%.c=%.o)
 ISOBJ			= $(DIS:%.c=%.o)
 MEMOBJ			= $(DMEM:%.c=%.o)
 TOOBJ			= $(DTO:%.c=%.o)
-ALLOBJ			= $(OBJS) $(STROBJ) $(PUTOBJ) $(ISOBJ) $(MEMOBJ) $(TOOBJ)
 BSTOBJ			= $(DBST:%.c=%.o)
-BONUS_OBJS		= $(DBON:.c=.o)
-GNL_OBJS		= $(GNL:.c=.o)
-ALLBON			= $(BONUS_OBJS) $(GNL_OBJS) $(ALLOBJ) $(BSTOBJ)
+BONUS_OBJS		= $(DBON:%.c=%.o)
+GNL_OBJS		= $(GNL:%.c=%.o)
+ALLOBJ			= $(OBJS) $(STROBJ) $(PUTOBJ) $(ISOBJ) $(MEMOBJ) $(TOOBJ)
+ALLBON			= $(BONUS_OBJS) $(GNL_OBJS) $(BSTOBJ) $(ALLOBJ)
 
 BONUSS			= . 
 CC				= gcc
 RM				= rm -f
-CFLAGS			= -Wall -Werror -Wextra -Ignl/ -I.
+CFLAGS			= -Wall -Werror -Wextra -I gnl/ -I. 
 NAME			= libft.a
 
 all:			$(NAME)
@@ -91,7 +91,7 @@ $(NAME):		$(ALLOBJ)
 				ar rcs $(NAME) $(ALLOBJ)
 
 clean:
-				$(RM) $(ALLOBJ) $(ALLBON)
+				$(RM) $(ALLBON)
 
 fclean:			clean
 				$(RM) $(NAME)
