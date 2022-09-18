@@ -6,7 +6,7 @@
 #    By: dexposit <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/24 13:35:22 by dexposit          #+#    #+#              #
-#    Updated: 2022/09/17 16:25:26 by dexposit         ###   ########.fr        #
+#    Updated: 2022/09/18 19:38:50 by dexposit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,6 +67,7 @@ DMEM			= $(addprefix mem/, $(MEM))
 DTO				= $(addprefix tox/, $(TO))
 DBST			= $(addprefix bst/, $(BST))
 DBON			= $(addprefix lst/, $(BONUS))
+ALLC			= $(DSTR) $(DPUT) $(DIS) $(DMEM) $(DTO) $(DBST) $(DBON)
 OBJS			= $(SRCS:%.c=%.o) 
 STROBJ			= $(DSTR:%.c=%.o)
 PUTOBJ			= $(DPUT:%.c=%.o)
@@ -84,8 +85,12 @@ CC				= gcc
 RM				= rm -f
 CFLAGS			= -Wall -Werror -Wextra -I gnl/ -I. 
 NAME			= libft.a
+OBJFLAGS		= -o
 
 all:			$(NAME)
+
+$(ALLOBJ):		$(ALLC)
+				$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME):		$(ALLOBJ)
 				ar rcs $(NAME) $(ALLOBJ)
@@ -100,7 +105,7 @@ re:				fclean $(NAME)
 
 bonus:			$(BONUSS)
 
-$(BONUSS):		$(ALLBON)
-				ar rcs $(NAME) $(ALLBON)
+$(BONUSS):		$(ALLOBJ)
+				ar rcs $(NAME) $(ALLOBJ)
 
 .PHONY:			all clean fclean re bonus
