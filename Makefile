@@ -6,7 +6,7 @@
 #    By: dexposit <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/24 13:35:22 by dexposit          #+#    #+#              #
-#    Updated: 2022/09/18 19:38:50 by dexposit         ###   ########.fr        #
+#    Updated: 2022/09/18 20:40:53 by dexposit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,7 +77,7 @@ TOOBJ			= $(DTO:%.c=%.o)
 BSTOBJ			= $(DBST:%.c=%.o)
 BONUS_OBJS		= $(DBON:%.c=%.o)
 GNL_OBJS		= $(GNL:%.c=%.o)
-ALLOBJ			= $(OBJS) $(STROBJ) $(PUTOBJ) $(ISOBJ) $(MEMOBJ) $(TOOBJ)
+ALLOBJ			= $(OBJS) $(STROBJ) $(PUTOBJ) $(ISOBJ) $(MEMOBJ) $(TOOBJ) $(BSTOBJ)
 ALLBON			= $(BONUS_OBJS) $(GNL_OBJS) $(BSTOBJ) $(ALLOBJ)
 
 BONUSS			= . 
