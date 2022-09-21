@@ -6,7 +6,7 @@
 #    By: dexposit <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/24 13:35:22 by dexposit          #+#    #+#              #
-#    Updated: 2022/09/21 14:08:22 by dexposit         ###   ########.fr        #
+#    Updated: 2022/09/21 17:21:31 by dexposit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,7 +59,6 @@ BONUS			=	ft_lstnew_bonus.c			\
 					ft_lstmap_bonus.c
 GNL				=	gnl/get_next_line.c
 
-.SILENT:
 DSTR			= $(addprefix str/, $(STR))
 DPUT			= $(addprefix put/, $(PUT))
 DIS				= $(addprefix isx/, $(IS))
@@ -79,22 +78,24 @@ BONUS_OBJS		= $(DBON:%.c=%.o)
 GNL_OBJS		= $(GNL:%.c=%.o)
 ALLOBJ			= $(OBJS) $(STROBJ) $(PUTOBJ) $(ISOBJ) $(MEMOBJ) $(TOOBJ) $(BSTOBJ)
 ALLBON			= $(BONUS_OBJS) $(GNL_OBJS) $(BSTOBJ) $(ALLOBJ)
+OBJDIR			= obj
 
 BONUSS			= . 
 CC				= gcc
 RM				= rm -f
-CFLAGS			= -Wall -Werror -Wextra -I gnl/ -I. 
+CFLAGS			= -Wall -Werror -Wextra -I . -I gnl/
 NAME			= libft.a
-OBJFLAGS		= -o
 
 all:			$(NAME)
 
+%.o:			%.c
+	$(CC) -c $< $(CFLAGS) -o $@
 
 $(NAME):		$(ALLOBJ)
 				ar rcs $(NAME) $(ALLOBJ)
 
 clean:
-				$(RM) $(ALLBON)
+				$(RM) $(ALLOBJ)
 
 fclean:			clean
 				$(RM) $(NAME)
