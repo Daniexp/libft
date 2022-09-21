@@ -6,7 +6,7 @@
 #    By: dexposit <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/24 13:35:22 by dexposit          #+#    #+#              #
-#    Updated: 2022/09/18 20:40:53 by dexposit         ###   ########.fr        #
+#    Updated: 2022/09/21 14:08:22 by dexposit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,8 +89,6 @@ OBJFLAGS		= -o
 
 all:			$(NAME)
 
-$(ALLOBJ):		$(ALLC)
-				$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME):		$(ALLOBJ)
 				ar rcs $(NAME) $(ALLOBJ)
