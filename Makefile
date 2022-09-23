@@ -6,7 +6,7 @@
 #    By: dexposit <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/24 13:35:22 by dexposit          #+#    #+#              #
-#    Updated: 2022/09/21 17:21:31 by dexposit         ###   ########.fr        #
+#    Updated: 2022/09/23 15:13:57 by dexposit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,11 +76,11 @@ TOOBJ			= $(DTO:%.c=%.o)
 BSTOBJ			= $(DBST:%.c=%.o)
 BONUS_OBJS		= $(DBON:%.c=%.o)
 GNL_OBJS		= $(GNL:%.c=%.o)
-ALLOBJ			= $(OBJS) $(STROBJ) $(PUTOBJ) $(ISOBJ) $(MEMOBJ) $(TOOBJ) $(BSTOBJ)
+ALLOBJ			= $(OBJS) $(STROBJ) $(PUTOBJ) $(ISOBJ) $(MEMOBJ) $(TOOBJ)
 ALLBON			= $(BONUS_OBJS) $(GNL_OBJS) $(BSTOBJ) $(ALLOBJ)
 OBJDIR			= obj
 
-BONUSS			= . 
+BONUSS			= .
 CC				= gcc
 RM				= rm -f
 CFLAGS			= -Wall -Werror -Wextra -I . -I gnl/
@@ -95,7 +95,7 @@ $(NAME):		$(ALLOBJ)
 				ar rcs $(NAME) $(ALLOBJ)
 
 clean:
-				$(RM) $(ALLOBJ)
+				$(RM) $(ALLBON)
 
 fclean:			clean
 				$(RM) $(NAME)
@@ -104,7 +104,7 @@ re:				fclean $(NAME)
 
 bonus:			$(BONUSS)
 
-$(BONUSS):		$(ALLOBJ)
-				ar rcs $(NAME) $(ALLOBJ)
+$(BONUSS):		$(ALLBON)
+				ar rcs $(NAME) $(ALLBON)
 
 .PHONY:			all clean fclean re bonus
