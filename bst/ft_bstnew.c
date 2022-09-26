@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 14:04:15 by dexposit          #+#    #+#             */
-/*   Updated: 2022/09/17 21:08:08 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/09/26 15:29:26 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ t_bst	*ft_bstnew(void *content)
 		new_node->left = 0;
 		new_node->right = 0;
 	}
-	return (new_node);	
+	return (new_node);
 }
